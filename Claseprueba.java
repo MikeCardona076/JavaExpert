@@ -11,7 +11,7 @@ public class Claseprueba extends Gasto{
     // Variables 
     static int dia = 0;
     static int monto=0;
-    static String descripcion = "";
+    static String descripcion;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////
 	public static void main(String[] args) {
@@ -69,13 +69,18 @@ public class Claseprueba extends Gasto{
     	while(llave < 0);
     	
     	 for(int i =1; i <= llave; i++){
+    		 
+             System.out.println("\n Ingresar Descripcion");
+             descripcion = ingreso.nextLine();
              
              System.out.println("Ingresar Dia");
              dia = ingreso.nextInt();
+             
              System.out.println("\n Ingresar Monto");
              monto = ingreso.nextInt();
-             System.out.println("\n Ingresar Descripcion");
-             descripcion = ingreso.nextLine();
+             
+             ingreso.nextLine(); //limpiar el intro
+             
 
              aux = new Gasto();
              aux.setDia(dia);
@@ -103,9 +108,9 @@ public class Claseprueba extends Gasto{
     public static void Ordenar() {
     	
         for (int i = 0; i < listaGastos.size(); i++) {
-            System.out.println((i+1) + ". " + listaGastos.get(i).getMonto() + 
-            		" Monto: " + listaGastos.get(i).getDia() + " - Dia: " +
-            		listaGastos.get(i).getDescripcion());
+            System.out.println((i+1) + ". " + " Monto: "  + listaGastos.get(i).getMonto() + 
+            		 " - Dia: " + listaGastos.get(i).getDia()  +
+            		 " Descripcion " + listaGastos.get(i).getDescripcion());
         }
     	
     }
